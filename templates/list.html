@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block header%}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">To do List</h1>
+    <p class="lead">To Make you Smile!!</p>
+  </div>
+</div>
+{% endblock header %}
+{% block content%}
+
+<div class="container">
+  <p><a href="{% url 'create' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">New</a></p>
+{% for item in object_list %}
+<div class="alert alert-{{ item.priority }}" role="alert">
+    <h4>{{ item.title }}</h4>
+    <span class="badge badge-pill badge-danger">{{ item.duedate}}</span>
+    <span class="badge badge-pill badge-secondary">{{ item.place}}</span><br><br>
+    <a href="{% url 'update' item.pk %}" class="btn btn-outline-success" tabindex="-1" role="button" aria-disabled="true">Update</a>
+    <a href="{% url 'detail' item.pk %}" class="btn btn-outline-info" tabindex="-1" role="button" aria-disabled="true">Detail</a>
+    <a href="{% url 'delete' item.pk %}" class="btn btn-outline-danger" tabindex="-1" role="button" aria-disabled="true">Delete</a>
+  </div>
+ 
+{% endfor %}
+</div>
+{% endblock content%}

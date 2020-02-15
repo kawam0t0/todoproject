@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+
+{% block header %}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Detail List</h1>
+    <p class="lead">To Make you Smile!!</p>
+  </div>
+</div>
+{% endblock header %}
+
+
+{% block content%}
+
+<div class="container">
+    <h3>Title : {{ object.title }}</h3>
+      <span class="badge badge-danger">{{ object.duedate}}</span>
+      <span class="badge badge-secondary">{{ object.place}}</span>
+      <br>
+      <h3>Memo : {{ object.memo}}</h3><br>
+    <a href="{% url 'list' %}" class="btn btn-outline-info" tabindex="-1" role="button" aria-disabled="true">Back</a>
+</div>
+
+{% endblock content%}

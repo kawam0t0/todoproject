@@ -1,0 +1,22 @@
+{% extends "base.html"%}
+
+{% block header%}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Delete List</h1>
+    <p class="lead">To Make you Smile!!</p>
+  </div>
+</div>
+{% endblock header %}
+
+{% block content %}
+<div class="container">
+<p class="lead">こちらの記事を削除しますか？</p>
+<form action="#" method = "post" >
+  {% csrf_token %}
+  <h3>{{ object.title }}</h3>
+  <input class="btn btn-danger btn-lg active" type="submit" value="Delete">
+</form>
+</div>
+{% endblock content %}
+

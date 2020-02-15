@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block header %}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Create List</h1>
+    <p class="lead">To Make you Smile!!</p>
+  </div>
+</div>
+{% endblock header %}
+
+{% block content %}
+<form action="#" method = "post" >
+ {% csrf_token %}
+ <div class="container">
+    <div class="form-group">
+        <h4 for="exampleFormControlInput1">Title</h4>
+        {{ form.title }}
+      </div>
+      
+      <div class="form-group">
+        <h4 for="exampleFormControlTextarea1">Memo</h4>
+        {{ form.memo }}
+      </div>
+      
+      <div class="form-group">
+        <h4 for="exampleFormControlSelect1">Priority</h4>
+          {{ form.priority }}
+      </div>
+
+      <div class="form-group">
+        <h4 for="exampleFormControlInput1">Due</h4>
+        {{ form.duedate }}
+      </div>
+      <div class="form-group">
+        <h4 for="exampleFormControlInput1">Place</h4>
+        {{ form.place }}
+      </div>
+
+       <input class="btn btn-info" type="submit" value="Create">
+</div>
+   </form>
+
+  {% endblock content%}
+
+
